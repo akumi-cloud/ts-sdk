@@ -17,7 +17,7 @@ export interface ResolvedConfig {
 export function resolveConfig(config: ClientConfig): ResolvedConfig {
   return {
     apiKey: config.apiKey,
-    baseUrl: config.baseUrl ?? "https://api.akumi.cloud",
+    baseUrl: config.baseUrl ?? "https://api.akumi.cloud/v1",
     maxRetries: config.maxRetries ?? 2,
     retryOn: config.retryOn ?? [429, 500, 502, 503, 504],
   };
