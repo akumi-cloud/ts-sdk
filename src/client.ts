@@ -4,6 +4,7 @@ import type { ClientConfig } from "./client/config.js";
 import { Transport } from "./client/transport.js";
 import { AuditLogsResource } from "./resources/auditLogs.js";
 import { ChatResource } from "./resources/chat.js";
+import { EmbeddingsResource } from "./resources/embeddings.js";
 import { ModelsResource } from "./resources/models.js";
 import { MemoryResource } from "./resources/memory.js";
 import { MemoryThreadsResource } from "./resources/memoryThreads.js";
@@ -12,6 +13,7 @@ export class Akumi {
   private readonly transport: Transport;
   readonly auditLogs: AuditLogsResource;
   readonly chat: ChatResource;
+  readonly embeddings: EmbeddingsResource;
   readonly models: ModelsResource;
   readonly memory: MemoryResource;
   readonly memoryThreads: MemoryThreadsResource;
@@ -19,6 +21,7 @@ export class Akumi {
     this.transport = new Transport(config);
     this.auditLogs = new AuditLogsResource(this.transport);
     this.chat = new ChatResource(this.transport);
+    this.embeddings = new EmbeddingsResource(this.transport);
     this.models = new ModelsResource(this.transport);
     this.memory = new MemoryResource(this.transport);
     this.memoryThreads = new MemoryThreadsResource(this.transport);

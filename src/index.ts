@@ -11,10 +11,12 @@ export {
 } from "./errors.js";
 export { AuditLogsResource } from "./resources/auditLogs.js";
 export { ChatResource } from "./resources/chat.js";
+export { EmbeddingsResource } from "./resources/embeddings.js";
 export { ModelsResource } from "./resources/models.js";
 export { MemoryResource } from "./resources/memory.js";
 export { MemoryThreadsResource } from "./resources/memoryThreads.js";
 export type { AuditLogApiResource } from "./models/AuditLogApiResource.js";
 export type { ChatCompletionsRequest } from "./models/ChatCompletionsRequest.js";
+export type { EmbeddingsRequest } from "./models/EmbeddingsRequest.js";
 export type { ThreadMessageViewModel } from "./models/ThreadMessageViewModel.js";
 export type { ThreadViewModel } from "./models/ThreadViewModel.js";
