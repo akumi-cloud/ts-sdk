@@ -2,29 +2,26 @@
 
 import type { ClientConfig } from "./client/config.js";
 import { Transport } from "./client/transport.js";
+import { RecallResource } from "./resources/recall.js";
 import { AuditLogsResource } from "./resources/auditLogs.js";
 import { ChatResource } from "./resources/chat.js";
 import { EmbeddingsResource } from "./resources/embeddings.js";
 import { ModelsResource } from "./resources/models.js";
-import { MemoryResource } from "./resources/memory.js";
-import { MemoryThreadsResource } from "./resources/memoryThreads.js";
 
 export class Akumi {
   private readonly transport: Transport;
+  readonly recall: RecallResource;
   readonly auditLogs: AuditLogsResource;
   readonly chat: ChatResource;
   readonly embeddings: EmbeddingsResource;
   readonly models: ModelsResource;
-  readonly memory: MemoryResource;
-  readonly memoryThreads: MemoryThreadsResource;
   constructor(config: ClientConfig) {
     this.transport = new Transport(config);
+    this.recall = new RecallResource(this.transport);
     this.auditLogs = new AuditLogsResource(this.transport);
     this.chat = new ChatResource(this.transport);
     this.embeddings = new EmbeddingsResource(this.transport);
     this.models = new ModelsResource(this.transport);
-    this.memory = new MemoryResource(this.transport);
-    this.memoryThreads = new MemoryThreadsResource(this.transport);
   }
 
   static fromApiKey(apiKey: string): Akumi {
