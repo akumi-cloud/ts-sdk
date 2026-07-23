@@ -1,0 +1,42 @@
+name: Publish to npm
+
+# Fires on the vX.Y.Z tag that the control-plane sdk-ts.yml workflow auto-pushes.
+# Sets package.json to the tag version, builds, and publishes to npm. Skips
+# cleanly until the NPM_TOKEN secret is set, so early tags do not fail.
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Set version from the tag
+        run: npm version "${GITHUB_REF_NAME#v}" --no-git-tag-version --allow-same-version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish to npm
+        if: env.NPM_TOKEN != ''
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publishing skipped
+        if: env.NPM_TOKEN == ''
+        run: echo "NPM_TOKEN is not set; skipping npm publish. Add it as a repo secret to enable."
