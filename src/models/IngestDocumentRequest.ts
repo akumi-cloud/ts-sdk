@@ -3,6 +3,6 @@
 export interface IngestDocumentRequest {
   title: string;
   text: string;
+  collection: string;
   source?: string | null;
-  collection?: string | null;
 }

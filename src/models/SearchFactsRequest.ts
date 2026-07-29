@@ -4,4 +4,5 @@ export interface SearchFactsRequest {
   query: string;
   user_ref?: string | null;
   limit?: number | null;
+  collection?: string[] | null;
 }

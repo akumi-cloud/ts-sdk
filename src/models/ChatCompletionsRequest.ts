@@ -7,7 +7,6 @@ export interface ChatCompletionsRequest {
   max_tokens?: number | null;
   stream?: boolean | null;
   firewall?: boolean | null;
-  rag?: string | null;
   user?: string | null;
   thread?: string | null;
   top_p?: number | null;
@@ -24,6 +23,7 @@ export interface ChatCompletionsRequest {
   models?: string[];
   provider?: unknown;
   stream_options?: unknown;
+  collection?: string[] | null;
   stop?: string[] | null;
   logit_bias?: number[] | null;
   response_format?: unknown;
