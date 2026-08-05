@@ -2,7 +2,7 @@
 
 export interface SearchRequest {
   query: string;
+  collection?: string[] | null;
   user_ref?: string | null;
   limit?: number | null;
-  collection?: string[] | null;
 }
