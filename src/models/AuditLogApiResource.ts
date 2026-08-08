@@ -8,6 +8,6 @@ export interface AuditLogApiResource {
   ipAddress: string | null;
   userAgent: string | null;
   target: unknown | null;
-  metadata: unknown[] | null;
-  createdAt: string;
+  metadata: unknown | null;
+  createdAt: string | null;
 }

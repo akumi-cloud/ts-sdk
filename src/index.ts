@@ -10,6 +10,7 @@ export {
   RateLimitError,
 } from "./errors.js";
 export { RecallResource } from "./resources/recall.js";
+export { ScoresResource } from "./resources/scores.js";
 export { AuditLogsResource } from "./resources/auditLogs.js";
 export { ChatResource } from "./resources/chat.js";
 export { EmbeddingsResource } from "./resources/embeddings.js";
@@ -23,5 +24,6 @@ export type { SearchDocumentsRequest } from "./models/SearchDocumentsRequest.js"
 export type { SearchFactsRequest } from "./models/SearchFactsRequest.js";
 export type { SearchRequest } from "./models/SearchRequest.js";
 export type { StoreCollectionRequest } from "./models/StoreCollectionRequest.js";
+export type { StoreScoreRequest } from "./models/StoreScoreRequest.js";
 export type { ThreadMessageViewModel } from "./models/ThreadMessageViewModel.js";
 export type { ThreadViewModel } from "./models/ThreadViewModel.js";

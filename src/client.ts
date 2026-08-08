@@ -3,6 +3,7 @@
 import type { ClientConfig } from "./client/config.js";
 import { Transport } from "./client/transport.js";
 import { RecallResource } from "./resources/recall.js";
+import { ScoresResource } from "./resources/scores.js";
 import { AuditLogsResource } from "./resources/auditLogs.js";
 import { ChatResource } from "./resources/chat.js";
 import { EmbeddingsResource } from "./resources/embeddings.js";
@@ -11,6 +12,7 @@ import { ModelsResource } from "./resources/models.js";
 export class Akumi {
   private readonly transport: Transport;
   readonly recall: RecallResource;
+  readonly scores: ScoresResource;
   readonly auditLogs: AuditLogsResource;
   readonly chat: ChatResource;
   readonly embeddings: EmbeddingsResource;
@@ -18,6 +20,7 @@ export class Akumi {
   constructor(config: ClientConfig) {
     this.transport = new Transport(config);
     this.recall = new RecallResource(this.transport);
+    this.scores = new ScoresResource(this.transport);
     this.auditLogs = new AuditLogsResource(this.transport);
     this.chat = new ChatResource(this.transport);
     this.embeddings = new EmbeddingsResource(this.transport);
