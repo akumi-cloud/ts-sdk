@@ -19,6 +19,7 @@ export type { AuditLogApiResource } from "./models/AuditLogApiResource.js";
 export type { ChatCompletionsRequest } from "./models/ChatCompletionsRequest.js";
 export type { EmbeddingsRequest } from "./models/EmbeddingsRequest.js";
 export type { IngestDocumentRequest } from "./models/IngestDocumentRequest.js";
+export type { PiiLanguage } from "./models/PiiLanguage.js";
 export type { RememberFactRequest } from "./models/RememberFactRequest.js";
 export type { SearchDocumentsRequest } from "./models/SearchDocumentsRequest.js";
 export type { SearchFactsRequest } from "./models/SearchFactsRequest.js";

@@ -10,6 +10,7 @@ export interface ChatCompletionsRequest {
   stream?: boolean | null;
   stream_options?: unknown;
   firewall?: boolean | null;
+  firewall_language?: unknown;
   collection?: string[] | null;
   user?: string | null;
   thread?: string | null;
