@@ -25,10 +25,6 @@ export class RecallResource {
     return this.transport.request('POST', '/recall/search', null, params);
   }
 
-  async searchFacts(params: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('POST', '/recall/facts/search', null, params);
-  }
-
   async listFacts(query: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
     return this.transport.request('GET', '/recall/facts', query, null);
   }
@@ -47,10 +43,6 @@ export class RecallResource {
 
   async erase(): Promise<Record<string, unknown>> {
     return this.transport.request('DELETE', '/recall', null, null);
-  }
-
-  async searchDocuments(params: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('POST', '/recall/documents/search', null, params);
   }
 
   async listDocuments(query: Record<string, unknown> = {}): Promise<Record<string, unknown>> {

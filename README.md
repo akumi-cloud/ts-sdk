@@ -1,6 +1,6 @@
 # Akumi TypeScript SDK
 
-The official TypeScript client for [Akumi](https://akumi.cloud), the
+The official TypeScript client for [Akumi](https://akumi.eu), the
 EU-sovereign, OpenAI-compatible inference API. Native `fetch`, zero runtime
 dependencies. One `base_url` for every model, governed and metered, with your
 regulated data kept in the EU.
@@ -22,7 +22,7 @@ npm install @akumi/sdk
 
 ## Quickstart
 
-Create an API key under app.akumi.cloud -> Platform -> API keys:
+Create an API key under app.akumi.eu -> Platform -> API keys:
 
 ```ts
 import { Akumi } from "@akumi/sdk";
@@ -70,14 +70,14 @@ const vector = embeddings.data[0].embedding;
 
 ## Configuration
 
-`fromApiKey()` targets `https://api.akumi.cloud/v1` and retries transient
+`fromApiKey()` targets `https://api.akumi.eu/v1` and retries transient
 failures (429, 502, 503, 504). Pass a config object to override the base URL,
 timeout, or retry policy.
 
 ## Documentation
 
-- Guides: https://akumi.cloud/docs
-- API reference: https://akumi.cloud/docs/api-reference
+- Guides: https://docs.akumi.eu
+- API reference: https://docs.akumi.eu/api-reference
 
 ## About
 

@@ -2,7 +2,7 @@
 
 import type { Transport } from "../client/transport.js";
 
-export class ChatResource {
+export class ChatCompletionsResource {
   constructor(private readonly transport: Transport) {}
 
   async create(params: Record<string, unknown> = {}): Promise<Record<string, unknown>> {

@@ -2,7 +2,7 @@
 
 import type { Transport } from "../client/transport.js";
 
-export class AuditLogsResource {
+export class AuditLogResource {
   constructor(private readonly transport: Transport) {}
 
   async list(query: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
