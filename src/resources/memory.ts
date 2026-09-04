@@ -2,82 +2,82 @@
 
 import type { Transport } from "../client/transport.js";
 
-export class RecallResource {
+export class MemoryResource {
   constructor(private readonly transport: Transport) {}
 
   async listThreads(query: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('GET', '/recall/threads', query, null);
+    return this.transport.request('GET', '/memory/threads', query, null);
   }
 
   async createThread(): Promise<Record<string, unknown>> {
-    return this.transport.request('POST', '/recall/threads', null, null);
+    return this.transport.request('POST', '/memory/threads', null, null);
   }
 
   async getThread(thread: string): Promise<Record<string, unknown>> {
-    return this.transport.request('GET', `/recall/threads/${thread}`, null, null);
+    return this.transport.request('GET', `/memory/threads/${thread}`, null, null);
   }
 
   async deleteThread(thread: string): Promise<Record<string, unknown>> {
-    return this.transport.request('DELETE', `/recall/threads/${thread}`, null, null);
+    return this.transport.request('DELETE', `/memory/threads/${thread}`, null, null);
   }
 
   async search(params: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('POST', '/recall/search', null, params);
+    return this.transport.request('POST', '/memory/search', null, params);
   }
 
   async listFacts(query: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('GET', '/recall/facts', query, null);
+    return this.transport.request('GET', '/memory/facts', query, null);
   }
 
   async rememberFact(params: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('POST', '/recall/facts', null, params);
+    return this.transport.request('POST', '/memory/facts', null, params);
   }
 
   async forgetFact(id: string): Promise<Record<string, unknown>> {
-    return this.transport.request('DELETE', `/recall/facts/${id}`, null, null);
+    return this.transport.request('DELETE', `/memory/facts/${id}`, null, null);
   }
 
   async export(query: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('GET', '/recall/export', query, null);
+    return this.transport.request('GET', '/memory/export', query, null);
   }
 
   async erase(): Promise<Record<string, unknown>> {
-    return this.transport.request('DELETE', '/recall', null, null);
+    return this.transport.request('DELETE', '/memory', null, null);
   }
 
   async listDocuments(query: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('GET', '/recall/documents', query, null);
+    return this.transport.request('GET', '/memory/documents', query, null);
   }
 
   async ingestDocument(params: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('POST', '/recall/documents', null, params);
+    return this.transport.request('POST', '/memory/documents', null, params);
   }
 
   async getDocument(document: string): Promise<Record<string, unknown>> {
-    return this.transport.request('GET', `/recall/documents/${document}`, null, null);
+    return this.transport.request('GET', `/memory/documents/${document}`, null, null);
   }
 
   async deleteDocument(document: string): Promise<Record<string, unknown>> {
-    return this.transport.request('DELETE', `/recall/documents/${document}`, null, null);
+    return this.transport.request('DELETE', `/memory/documents/${document}`, null, null);
   }
 
   async listCollections(query: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('GET', '/recall/collections', query, null);
+    return this.transport.request('GET', '/memory/collections', query, null);
   }
 
   async createCollection(params: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('POST', '/recall/collections', null, params);
+    return this.transport.request('POST', '/memory/collections', null, params);
   }
 
   async getCollection(slug: string): Promise<Record<string, unknown>> {
-    return this.transport.request('GET', `/recall/collections/${slug}`, null, null);
+    return this.transport.request('GET', `/memory/collections/${slug}`, null, null);
   }
 
   async deleteCollection(slug: string): Promise<Record<string, unknown>> {
-    return this.transport.request('DELETE', `/recall/collections/${slug}`, null, null);
+    return this.transport.request('DELETE', `/memory/collections/${slug}`, null, null);
   }
 
   async updateCollection(slug: string, params: Record<string, unknown> = {}): Promise<Record<string, unknown>> {
-    return this.transport.request('PATCH', `/recall/collections/${slug}`, null, params);
+    return this.transport.request('PATCH', `/memory/collections/${slug}`, null, params);
   }
 }

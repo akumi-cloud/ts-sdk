@@ -12,8 +12,8 @@ export {
 export { AuditLogResource } from "./resources/auditLog.js";
 export { ChatCompletionsResource } from "./resources/chatCompletions.js";
 export { EmbeddingsResource } from "./resources/embeddings.js";
+export { MemoryResource } from "./resources/memory.js";
 export { ModelsResource } from "./resources/models.js";
-export { RecallResource } from "./resources/recall.js";
 export { ScoresResource } from "./resources/scores.js";
 export type { AuditLogApiResource } from "./models/AuditLogApiResource.js";
 export type { ChatCompletionsRequest } from "./models/ChatCompletionsRequest.js";
