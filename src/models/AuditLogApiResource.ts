@@ -4,10 +4,10 @@ export interface AuditLogApiResource {
   id: string;
   component: string;
   action: string;
-  actorId: number | null;
-  ipAddress: string | null;
-  userAgent: string | null;
+  actor_id: number | null;
+  ip_address: string | null;
+  user_agent: string | null;
   target: unknown | null;
   metadata: unknown | null;
-  createdAt: string | null;
+  created_at: string | null;
 }
