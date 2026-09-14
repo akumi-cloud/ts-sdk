@@ -9,6 +9,7 @@ export {
   InvalidRequestError,
   RateLimitError,
 } from "./errors.js";
+export { AgentsResource } from "./resources/agents.js";
 export { AuditLogResource } from "./resources/auditLog.js";
 export { ChatCompletionsResource } from "./resources/chatCompletions.js";
 export { EmbeddingsResource } from "./resources/embeddings.js";

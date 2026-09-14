@@ -2,6 +2,7 @@
 
 import type { ClientConfig } from "./client/config.js";
 import { Transport } from "./client/transport.js";
+import { AgentsResource } from "./resources/agents.js";
 import { AuditLogResource } from "./resources/auditLog.js";
 import { ChatCompletionsResource } from "./resources/chatCompletions.js";
 import { EmbeddingsResource } from "./resources/embeddings.js";
@@ -11,6 +12,7 @@ import { ScoresResource } from "./resources/scores.js";
 
 export class Akumi {
   private readonly transport: Transport;
+  readonly agents: AgentsResource;
   readonly auditLog: AuditLogResource;
   readonly chatCompletions: ChatCompletionsResource;
   readonly embeddings: EmbeddingsResource;
@@ -19,6 +21,7 @@ export class Akumi {
   readonly scores: ScoresResource;
   constructor(config: ClientConfig) {
     this.transport = new Transport(config);
+    this.agents = new AgentsResource(this.transport);
     this.auditLog = new AuditLogResource(this.transport);
     this.chatCompletions = new ChatCompletionsResource(this.transport);
     this.embeddings = new EmbeddingsResource(this.transport);
